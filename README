@@ -1,0 +1,52 @@
+Simple (Stupidly Implemented Mathematical Platform - Light Edition)
+===================================================================
+
+This is version 1.0 of the C++ library Simple.
+
+So far it contains a "littlenum" library, for multiplication of bignums which
+are not too big (due to performance issues).
+
+The modules it contains are:
+
+* dlimb.h : some macros for double limb arithmetic
+
+* twos.c/h : functions for doing arithmetic with numbers in twos complement format
+
+* nat.c/h : a class for doing arithmetic with unsigned bignums, with automatic memory management
+
+* znat.c/h : a class for doing arithmetic with signed bignums, with automatic memory management
+
+WARNING: Simple contains bugs. In fact, there is very little test code. It is also slow for integers of more than about 30 limbs. And it only works on x86/x86_64 due to the definition of count_leading_zeros in simple.h.
+
+Performance Comparison:
+-----------------------
+
+The following pseudocode was implemented in MPIR-2.6.0 and Simple:
+
+a = 1234567890123456789
+
+b = 1234567890123456789
+
+for (i = 0; i < 100000000; i++)
+   a += b
+
+The timings are as follows:
+
+Simple : 1.8s
+
+MPIR : 1.8s
+
+A generic C version of MPIR is slower.
+
+License:
+--------
+
+BSD: see license.txt
+
+Warranty:
+---------
+
+None. See warranty.txt
+
+William Hart - 2012.
+
