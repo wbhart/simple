@@ -3,7 +3,7 @@ Simple (Stupidly Implemented Mathematical Platform - Light Edition)
 
 This is version 1.0 of the C++ library Simple.
 
-So far it contains a "littlenum" library, for multiplication of bignums which
+So far it contains a "littlenum" library, for arithmetic of bignums which
 are not too big (due to performance issues).
 
 The modules it contains are:
